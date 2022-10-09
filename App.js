@@ -26,8 +26,9 @@ export default function App() {
     setUserNumber(pickedNumber);
     setIsGameOver(false);
   };
-  const gameOverHandler = () => {
+  const gameOverHandler = (numberOfRounds) => {
     setIsGameOver(true);
+    setGuessRounds(numberOfRounds);
   };
   const countHandler = (round) => {
     // count = round;
@@ -53,7 +54,7 @@ export default function App() {
     screen = (
       <GameOverScreen
         userNumber={userNumber}
-        roundsNumber={countHandler}
+        roundsNumber={guessRounds}
         onStartNewGame={onNewStartGameHandler}
       />
     );
